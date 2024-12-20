@@ -1,21 +1,20 @@
-﻿
-
-namespace Stream
+﻿namespace Stream.Tools
 {
-    public class FolderPath
+    public class FolderCreater
     {
         const string folderName = "Data";
-        const string fileName = "DataInfo.txt";
+        public const string fileName = "Data.json";
         public readonly static string path = Path.Combine(folderName, fileName);
+       
         public static void Creat()
         {
-            if (!Directory.Exists(path))
+            if (!Directory.Exists(folderName))
             {
                 Directory.CreateDirectory(folderName);
             }
             if (!File.Exists(path))
             {
-                using (var e = File.Create(path)) { }
+                using (var StudentFile = File.Create(path)) { }
             }
         }
 
